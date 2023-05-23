@@ -1,0 +1,17 @@
+﻿@page "/"
+
+@layout MainLayout
+
+@inject NavigationManager NavigationManager
+@inject ISnackbar snackbar
+
+
+<MudButton OnClick="buttonClick">Click Me!</MudButton>
+
+@code
+{
+    private void buttonClick()
+    {
+        snackbar.Add("It Works!", Severity.Info, config => { config.SnackbarVariant = Variant.Filled; });
+    }
+}

@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager NavigationManager
+
+<MudPaper Class="d-flex justify-center align-center logincontent" Elevation="0">
+
+    <MudPaper Class="d-flex justify-start flex-grow-1" />
+
+    <MudPaper Class="d-flex justify-center">
+        @Body
+    </MudPaper>
+
+    <MudPaper Class="d-flex justify-end flex-grow-1" />
+
+</MudPaper>
+
+<style>
+    .logincontent {
+        height: calc(100vh - 48px);
+    }
+</style>
+
+@code{
+}
