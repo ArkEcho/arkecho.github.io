@@ -1,24 +1,28 @@
 ﻿@inherits LayoutComponentBase
 
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
-<MudPaper Class="d-flex justify-center align-center logincontent" Elevation="0">
+<MudAppBar Color="Color.Primary" Dense="true" Fixed="false" Elevation="0">
+    <MudSpacer />
+    <MudIconButton OnClick="buttonGithubClicked" Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" />
+</MudAppBar>
 
-    <MudPaper Class="d-flex justify-start flex-grow-1" />
+<MudElement Class="d-flex justify-center align-center">
 
-    <MudPaper Class="d-flex justify-center">
+    <MudElement Class="d-flex justify-start flex-grow-1" />
+
+    <MudElement Class="d-flex justify-center">
         @Body
-    </MudPaper>
+    </MudElement>
 
-    <MudPaper Class="d-flex justify-end flex-grow-1" />
+    <MudElement Class="d-flex justify-end flex-grow-1" />
 
-</MudPaper>
-
-<style>
-    .logincontent {
-        height: calc(100vh - 48px);
-    }
-</style>
+</MudElement>
 
 @code{
+    private async Task buttonGithubClicked()
+    {
+        await JSRuntime.InvokeVoidAsync("open", "https://github.com/arkecho", "_blank");
+    }
 }

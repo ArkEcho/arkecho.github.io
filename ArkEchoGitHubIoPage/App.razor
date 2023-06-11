@@ -1,4 +1,15 @@
-﻿<MudThemeProvider IsDarkMode />
+﻿@{
+
+    MudTheme customTheme = new MudTheme()
+    {
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#3daee9",
+        },
+    };
+}
+
+<MudThemeProvider Theme="@customTheme" IsDarkMode />
 <MudDialogProvider/>
 <MudSnackbarProvider/>
 
