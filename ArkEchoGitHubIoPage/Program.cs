@@ -25,5 +25,4 @@ builder.Services.AddMudServices(config =>
 
 builder.Services.AddScoped<HTMLHelper>();
 
-
 await builder.Build().RunAsync();
